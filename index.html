@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>EFD CATCH!</title>
+  <meta name="description" content="泳ぎ回るエイチフィッシュデーモンを捕まえろ！">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game" id="game">
+    <div class="screen-flash" id="screenFlash"></div>
+    <div class="game-ocean" id="ocean"></div>
+
+    <!-- HUD -->
+    <div class="game-hud" id="hud">
+      <div class="hud-score">
+        <span class="hud-label">SCORE</span>
+        <span class="hud-value" id="score">0</span>
+      </div>
+      <div class="hud-combo" id="hudCombo">
+        <span class="hud-label">COMBO</span>
+        <span class="hud-value" id="combo">0</span>
+        <span class="hud-multiplier" id="multiplier">x1</span>
+      </div>
+      <div class="hud-timer" id="hudTimer">
+        <span class="hud-label">TIME</span>
+        <span class="hud-value" id="timer">30</span>
+      </div>
+      <div class="hud-best">
+        <span class="hud-label">BEST</span>
+        <span class="hud-value" id="best">0</span>
+      </div>
+    </div>
+
+    <div class="hud-items" id="hudItems"></div>
+
+    <!-- Title Screen -->
+    <div class="screen screen-title" id="titleScreen">
+      <div class="title-bg" id="titleBg"></div>
+      <img src="efd.png" alt="EFD" class="title-efd">
+      <h1 class="title-heading">EFD CATCH!</h1>
+      <p class="title-sub">エイチフィッシュデーモンを<br>たくさん捕まえよう！</p>
+      <div class="title-rules">
+        <span>🎯 クリック / タップ で捕獲</span>
+        <span>⏱ 制限時間 30秒</span>
+        <span>✨ 金色EFD = 高得点</span>
+        <span>💀 紫EFD = 触るな危険！</span>
+        <span>💨 青EFD = 高速 +3pt</span>
+        <span>🎁 アイテムを拾え！</span>
+      </div>
+      <button class="btn-start" id="btnStart">START</button>
+      <p class="title-credit">
+        <a href="https://x.com/S0iRu_VR" target="_blank" rel="noopener">@S0iRu_VR</a>
+      </p>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="screen screen-result hidden" id="resultScreen">
+      <h2 class="result-heading">TIME UP!</h2>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-score">
+        <span class="result-label">SCORE</span>
+        <span class="result-value" id="resultScore">0</span>
+      </div>
+      <div class="result-stats" id="resultStats"></div>
+      <p class="result-new-best hidden" id="newBest">NEW BEST!</p>
+      <p class="result-best">BEST: <span id="resultBest">0</span></p>
+      <div class="result-buttons">
+        <button class="btn-start" id="btnRetry">RETRY</button>
+        <button class="btn-share" id="btnShare">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          シェア
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
